@@ -1,17 +1,495 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SLDS Sample</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/design-system/2.11.8/styles/salesforce-lightning-design-system-imports.sanitized.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lightning Design System サンプルページ</title>
+  <!-- Lightning Design System のスタイルシート -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/design-system/2.17.5/styles/salesforce-lightning-design-system.min.css">
+  <style>
+    /* 追加のカスタムスタイル */
+    .custom-container {
+      padding: 1rem;
+    }
+    .app-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 <body>
-    <div class="slds-scope">
-        <div class="slds-theme_default slds-m-around_medium">
-            <h1 class="slds-text-heading_large">Salesforce Lightning Design System</h1>
-            <button class="slds-button slds-button_brand">Click Me</button>
+  <!-- SLDS Grid System を使用したレイアウト -->
+  <div class="slds-scope">
+    <!-- ヘッダー -->
+    <header class="slds-global-header_container">
+      <div class="slds-global-header slds-grid slds-grid_align-spread">
+        <div class="slds-global-header__item">
+          <div class="slds-global-header__logo">
+            <span class="slds-assistive-text">Lightning Design System</span>
+          </div>
         </div>
+        <div class="slds-global-header__item">
+          <ul class="slds-global-actions">
+            <li class="slds-global-actions__item">
+              <div class="slds-global-actions__notification slds-dropdown-trigger slds-dropdown-trigger_click">
+                <button class="slds-button slds-button_icon slds-button_icon-container slds-button_icon-small" title="通知">
+                  <span class="slds-icon_container slds-icon-utility-notification">
+                    <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
+                      <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#notification"></use>
+                    </svg>
+                    <span class="slds-assistive-text">通知</span>
+                  </span>
+                </button>
+              </div>
+            </li>
+            <li class="slds-global-actions__item">
+              <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                <button class="slds-button slds-global-actions__avatar slds-global-actions__item-action" title="プロフィール">
+                  <span class="slds-avatar">
+                    <img src="/api/placeholder/64/64" alt="プロフィール画像" />
+                  </span>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- メインナビゲーション -->
+    <div class="slds-context-bar">
+      <div class="slds-context-bar__primary">
+        <div class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger_click slds-no-hover">
+          <span class="slds-context-bar__label-action slds-context-bar__app-name">
+            <span class="slds-truncate">Lightning サンプルアプリ</span>
+          </span>
+        </div>
+      </div>
+      <nav class="slds-context-bar__secondary">
+        <ul class="slds-grid">
+          <li class="slds-context-bar__item slds-is-active">
+            <a href="#" class="slds-context-bar__label-action">
+              <span class="slds-truncate">ホーム</span>
+            </a>
+          </li>
+          <li class="slds-context-bar__item">
+            <a href="#" class="slds-context-bar__label-action">
+              <span class="slds-truncate">製品</span>
+            </a>
+          </li>
+          <li class="slds-context-bar__item">
+            <a href="#" class="slds-context-bar__label-action">
+              <span class="slds-truncate">サービス</span>
+            </a>
+          </li>
+          <li class="slds-context-bar__item">
+            <a href="#" class="slds-context-bar__label-action">
+              <span class="slds-truncate">お問い合わせ</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
+
+    <!-- メインコンテンツ -->
+    <div class="app-container">
+      <div class="slds-p-around_medium">
+        <!-- パンくずリスト -->
+        <nav role="navigation" aria-label="パンくずリスト">
+          <ol class="slds-breadcrumb slds-list_horizontal slds-wrap">
+            <li class="slds-breadcrumb__item">
+              <a href="#">ホーム</a>
+            </li>
+            <li class="slds-breadcrumb__item">
+              <a href="#">サンプル</a>
+            </li>
+          </ol>
+        </nav>
+
+        <!-- ページヘッダー -->
+        <div class="slds-page-header slds-m-top_medium">
+          <div class="slds-grid">
+            <div class="slds-col slds-has-flexi-truncate">
+              <div class="slds-media slds-no-space slds-grow">
+                <div class="slds-media__figure">
+                  <span class="slds-icon_container slds-icon-standard-opportunity">
+                    <svg class="slds-icon slds-icon_medium" aria-hidden="true">
+                      <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#opportunity"></use>
+                    </svg>
+                  </span>
+                </div>
+                <div class="slds-media__body">
+                  <nav>
+                    <ol class="slds-breadcrumb slds-line-height_reset">
+                      <li class="slds-breadcrumb__item">
+                        <span>Lightning Design System</span>
+                      </li>
+                    </ol>
+                  </nav>
+                  <h1 class="slds-page-header__title slds-m-right_small slds-truncate" title="Lightning Design Systemサンプルページ">
+                    Lightning Design Systemサンプルページ
+                  </h1>
+                </div>
+              </div>
+            </div>
+            <div class="slds-col slds-no-flex slds-grid slds-align-top">
+              <button class="slds-button slds-button_neutral">新規作成</button>
+              <button class="slds-button slds-button_brand">保存</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- タブコンポーネント -->
+        <div class="slds-tabs_default slds-m-top_large">
+          <ul class="slds-tabs_default__nav" role="tablist">
+            <li class="slds-tabs_default__item slds-is-active" role="presentation">
+              <a class="slds-tabs_default__link" href="#" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-1" id="tab-default-1__item">基本情報</a>
+            </li>
+            <li class="slds-tabs_default__item" role="presentation">
+              <a class="slds-tabs_default__link" href="#" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-2" id="tab-default-2__item">詳細情報</a>
+            </li>
+            <li class="slds-tabs_default__item" role="presentation">
+              <a class="slds-tabs_default__link" href="#" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item">関連情報</a>
+            </li>
+          </ul>
+          <div id="tab-default-1" class="slds-tabs_default__content slds-show" role="tabpanel" aria-labelledby="tab-default-1__item">
+            <div class="slds-grid slds-gutters slds-wrap">
+              <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12">
+                <!-- カード -->
+                <article class="slds-card">
+                  <div class="slds-card__header slds-grid">
+                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                      <div class="slds-media__figure">
+                        <span class="slds-icon_container slds-icon-standard-account">
+                          <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                            <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#account"></use>
+                          </svg>
+                          <span class="slds-assistive-text">サンプルカード</span>
+                        </span>
+                      </div>
+                      <div class="slds-media__body">
+                        <h2 class="slds-card__header-title">
+                          <a href="#" class="slds-card__header-link slds-truncate">
+                            <span>お知らせ</span>
+                          </a>
+                        </h2>
+                      </div>
+                      <div class="slds-no-flex">
+                        <button class="slds-button slds-button_neutral">すべて表示</button>
+                      </div>
+                    </header>
+                  </div>
+                  <div class="slds-card__body slds-card__body_inner">
+                    <div class="slds-feed">
+                      <ul class="slds-feed__list">
+                        <li class="slds-feed__item">
+                          <article class="slds-post">
+                            <header class="slds-post__header slds-media">
+                              <div class="slds-media__figure">
+                                <a href="#" class="slds-avatar slds-avatar_circle slds-avatar_medium">
+                                  <img src="/api/placeholder/64/64" alt="ユーザープロフィール画像" />
+                                </a>
+                              </div>
+                              <div class="slds-media__body">
+                                <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+                                  <p>
+                                    <a href="#" title="山田太郎">山田太郎</a> — 
+                                    <span class="slds-text-body_small">
+                                      <a href="#" title="サービス部門">サービス部門</a>
+                                    </span>
+                                  </p>
+                                </div>
+                                <p class="slds-text-body_small">
+                                  <a href="#" title="2時間前">2時間前</a>
+                                </p>
+                              </div>
+                            </header>
+                            <div class="slds-post__content slds-text-longform">
+                              <p>
+                                新しいLightning Design Systemのコンポーネントが追加されました。
+                                詳細は公式ドキュメントをご確認ください。デザインシステムを使用することで、
+                                一貫性のあるユーザーインターフェースを簡単に構築できます。
+                              </p>
+                            </div>
+                          </article>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <footer class="slds-card__footer">
+                    <a href="#">すべてのお知らせを表示</a>
+                  </footer>
+                </article>
+
+                <!-- データテーブル -->
+                <div class="slds-m-top_medium">
+                  <div class="slds-text-heading_medium slds-m-bottom_small">製品一覧</div>
+                  <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+                    <thead>
+                      <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                          <div class="slds-truncate" title="製品名">製品名</div>
+                        </th>
+                        <th class="" scope="col">
+                          <div class="slds-truncate" title="カテゴリ">カテゴリ</div>
+                        </th>
+                        <th class="" scope="col">
+                          <div class="slds-truncate" title="価格">価格</div>
+                        </th>
+                        <th class="" scope="col">
+                          <div class="slds-truncate" title="在庫状況">在庫状況</div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="slds-hint-parent">
+                        <th data-label="製品名" scope="row">
+                          <div class="slds-truncate" title="Lightning製品 A">Lightning製品 A</div>
+                        </th>
+                        <td data-label="カテゴリ">
+                          <div class="slds-truncate" title="ソフトウェア">ソフトウェア</div>
+                        </td>
+                        <td data-label="価格">
+                          <div class="slds-truncate" title="¥10,000">¥10,000</div>
+                        </td>
+                        <td data-label="在庫状況">
+                          <div class="slds-truncate">
+                            <span class="slds-badge slds-badge_success">在庫あり</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="slds-hint-parent">
+                        <th data-label="製品名" scope="row">
+                          <div class="slds-truncate" title="Lightning製品 B">Lightning製品 B</div>
+                        </th>
+                        <td data-label="カテゴリ">
+                          <div class="slds-truncate" title="ハードウェア">ハードウェア</div>
+                        </td>
+                        <td data-label="価格">
+                          <div class="slds-truncate" title="¥20,000">¥20,000</div>
+                        </td>
+                        <td data-label="在庫状況">
+                          <div class="slds-truncate">
+                            <span class="slds-badge slds-badge_warning">残りわずか</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="slds-hint-parent">
+                        <th data-label="製品名" scope="row">
+                          <div class="slds-truncate" title="Lightning製品 C">Lightning製品 C</div>
+                        </th>
+                        <td data-label="カテゴリ">
+                          <div class="slds-truncate" title="サービス">サービス</div>
+                        </td>
+                        <td data-label="価格">
+                          <div class="slds-truncate" title="¥30,000">¥30,000</div>
+                        </td>
+                        <td data-label="在庫状況">
+                          <div class="slds-truncate">
+                            <span class="slds-badge slds-badge_error">在庫なし</span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              
+              <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+                <!-- サイドバーカード -->
+                <article class="slds-card">
+                  <div class="slds-card__header slds-grid">
+                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                      <div class="slds-media__figure">
+                        <span class="slds-icon_container slds-icon-standard-report">
+                          <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                            <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#report"></use>
+                          </svg>
+                          <span class="slds-assistive-text">レポート</span>
+                        </span>
+                      </div>
+                      <div class="slds-media__body">
+                        <h2 class="slds-card__header-title">
+                          <a href="#" class="slds-card__header-link slds-truncate">
+                            <span>最近のアクティビティ</span>
+                          </a>
+                        </h2>
+                      </div>
+                    </header>
+                  </div>
+                  <div class="slds-card__body slds-card__body_inner">
+                    <ul class="slds-timeline">
+                      <li>
+                        <div class="slds-timeline__item_expandable">
+                          <div class="slds-media">
+                            <div class="slds-media__figure">
+                              <div class="slds-icon_container slds-icon-standard-event">
+                                <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                                  <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#event"></use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="slds-media__body">
+                              <div class="slds-grid slds-grid_align-spread">
+                                <a href="#" class="slds-text-link_reset">
+                                  <h3 class="slds-truncate" title="ミーティング">
+                                    <strong>ミーティング</strong>
+                                  </h3>
+                                </a>
+                                <div class="slds-timeline__actions">
+                                  <p class="slds-timeline__date">1日前</p>
+                                </div>
+                              </div>
+                              <p class="slds-m-top_x-small">
+                                製品開発に関するミーティングが開催されました。
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="slds-timeline__item_expandable">
+                          <div class="slds-media">
+                            <div class="slds-media__figure">
+                              <div class="slds-icon_container slds-icon-standard-task">
+                                <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                                  <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#task"></use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="slds-media__body">
+                              <div class="slds-grid slds-grid_align-spread">
+                                <a href="#" class="slds-text-link_reset">
+                                  <h3 class="slds-truncate" title="タスク">
+                                    <strong>タスク完了</strong>
+                                  </h3>
+                                </a>
+                                <div class="slds-timeline__actions">
+                                  <p class="slds-timeline__date">3日前</p>
+                                </div>
+                              </div>
+                              <p class="slds-m-top_x-small">
+                                サイトデザインの見直しタスクが完了しました。
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+
+                <!-- フォーム -->
+                <div class="slds-form slds-m-top_medium">
+                  <div class="slds-text-heading_medium slds-m-bottom_small">お問い合わせ</div>
+                  <div class="slds-form-element slds-m-bottom_small">
+                    <label class="slds-form-element__label" for="input-name">
+                      <abbr class="slds-required" title="必須">*</abbr> お名前
+                    </label>
+                    <div class="slds-form-element__control">
+                      <input type="text" id="input-name" placeholder="お名前を入力" required="" class="slds-input" />
+                    </div>
+                  </div>
+                  <div class="slds-form-element slds-m-bottom_small">
+                    <label class="slds-form-element__label" for="input-email">
+                      <abbr class="slds-required" title="必須">*</abbr> メールアドレス
+                    </label>
+                    <div class="slds-form-element__control">
+                      <input type="email" id="input-email" placeholder="メールアドレスを入力" required="" class="slds-input" />
+                    </div>
+                  </div>
+                  <div class="slds-form-element slds-m-bottom_small">
+                    <label class="slds-form-element__label" for="select-01">カテゴリ</label>
+                    <div class="slds-form-element__control">
+                      <div class="slds-select_container">
+                        <select class="slds-select" id="select-01">
+                          <option value="">選択してください</option>
+                          <option>製品について</option>
+                          <option>サービスについて</option>
+                          <option>その他</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slds-form-element slds-m-bottom_small">
+                    <label class="slds-form-element__label" for="textarea-01">
+                      <abbr class="slds-required" title="必須">*</abbr> お問い合わせ内容
+                    </label>
+                    <div class="slds-form-element__control">
+                      <textarea id="textarea-01" placeholder="お問い合わせ内容を入力" required="" class="slds-textarea"></textarea>
+                    </div>
+                  </div>
+                  <button class="slds-button slds-button_brand">送信</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="tab-default-2" class="slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-2__item">
+            <p>詳細情報のコンテンツがここに表示されます。</p>
+          </div>
+          <div id="tab-default-3" class="slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-3__item">
+            <p>関連情報のコンテンツがここに表示されます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- フッター -->
+    <footer class="slds-p-around_large slds-theme_shade slds-m-top_large">
+      <div class="slds-grid slds-grid_align-spread">
+        <div>
+          <p>© 2025 Lightning Design System サンプル</p>
+        </div>
+        <div>
+          <ul class="slds-list_horizontal slds-has-dividers_right">
+            <li class="slds-item">
+              <a href="#">プライバシーポリシー</a>
+            </li>
+            <li class="slds-item">
+              <a href="#">利用規約</a>
+            </li>
+            <li class="slds-item">
+              <a href="#">お問い合わせ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // タブ切り替え機能
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.slds-tabs_default__item');
+      const tabContents = document.querySelectorAll('.slds-tabs_default__content');
+      
+      tabs.forEach(function(tab, index) {
+        tab.addEventListener('click', function(event) {
+          event.preventDefault();
+          
+          // タブのアクティブ状態を切り替え
+          tabs.forEach(function(t) {
+            t.classList.remove('slds-is-active');
+            t.querySelector('a').setAttribute('aria-selected', 'false');
+            t.querySelector('a').setAttribute('tabindex', '-1');
+          });
+          
+          tab.classList.add('slds-is-active');
+          tab.querySelector('a').setAttribute('aria-selected', 'true');
+          tab.querySelector('a').setAttribute('tabindex', '0');
+          
+          // コンテンツの表示を切り替え
+          tabContents.forEach(function(content) {
+            content.classList.add('slds-hide');
+            content.classList.remove('slds-show');
+          });
+          
+          tabContents[index].classList.add('slds-show');
+          tabContents[index].classList.remove('slds-hide');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
